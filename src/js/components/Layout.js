@@ -31,11 +31,11 @@ handleClick() {
 
     const list = myList.map((message) => {
       return (
-        <li>message</li>
+        <li key={message}>{message}</li>
       )
     });
 
-    return (<div>
+    return (<div className="container">
       <h1>Cosecha SMS</h1>
       <input type="text" value={message} onChange={this.handleMsgChange.bind(this)} placeholder="Message" />
       <button onClick={this.handleClick.bind(this)} >Send</button>
