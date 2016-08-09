@@ -7,7 +7,7 @@ class MessageList extends Component {
   renderList() {
     return (
       this.props.list.map((option) => (
-        <p key={option.id}><input type="radio" name="message" /> {option.message}</p>
+        <div key={option.id} className="radio>"><input type="radio" name="message" /> {option.message}</div>
       ))
     );
   }

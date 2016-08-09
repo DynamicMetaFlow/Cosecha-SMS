@@ -11,7 +11,7 @@ const App = () => (
     <br />
     <MessageList />
     <br />
-    <input type="submit" value="Send SMS" />
+    <input className="btn btn-primary" type="submit" value="Send SMS" />
   </div>
 );
 
