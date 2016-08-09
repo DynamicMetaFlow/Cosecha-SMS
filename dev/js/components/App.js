@@ -8,8 +8,10 @@ const App = () => (
     <h1>Cosecha SMS</h1>
     <p>Type in the phone number you would like to send a Cosecha SMS to:</p>
     <PhoneInput />
-    <hr />
+    <br />
     <MessageList />
+    <br />
+    <input type="submit" value="Send SMS" />
   </div>
 );
 
