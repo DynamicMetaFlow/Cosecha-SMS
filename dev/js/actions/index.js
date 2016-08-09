@@ -14,6 +14,8 @@ export const onMessageSelect = (message) => {
 
 
 export const sendMessage = (userInput) => {
+
+
   return {
     type: 'SEND_MESSAGE',
     payload: userInput
