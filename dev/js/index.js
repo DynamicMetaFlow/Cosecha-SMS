@@ -6,7 +6,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
-import App from './containers/App.js';
+import App from './components/App.js';
 
 
 const logger = createLogger();
