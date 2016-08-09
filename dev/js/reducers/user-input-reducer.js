@@ -10,7 +10,7 @@ export default function (state={phone: '', selectedMessage: 1}, action) {
       // Logic to send SMS message would go here
       // Would most likely use Twilio
 
-      
+
 
       return state;
     default:
