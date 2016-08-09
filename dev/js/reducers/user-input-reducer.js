@@ -8,6 +8,8 @@ export default function (state={phone: '', selectedMessage: 1}, action) {
     case 'SEND_MESSAGE':
       // Logic to send SMS message would go here
       // Would most likely use Twilio
+      console.log('Sending Message: ' + action.payload.selectedMessage);
+      console.log('Sending to: ' + action.payload.phone);
 
 
 
