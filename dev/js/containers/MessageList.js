@@ -1,11 +1,11 @@
 import React from 'react';
 
 const MessageList = () => (
-  <ul>
-    <li>Option 1</li>
-    <li>Option 2</li>
-    <li>Option 3</li>
-  </ul>
+  <div>
+    <p><input type="radio" name="message" value="1" /> Option 1</p>
+    <p><input type="radio" name="message" value="2" /> Option 2</p>
+    <p><input type="radio" name="message" value="3" /> Option 3</p>
+  </div>
 );
 
 export default MessageList;
