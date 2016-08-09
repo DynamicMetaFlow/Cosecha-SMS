@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { onPhoneChange } from '../actions/index';
 
 class PhoneInput extends Component {
 
-  onChange(event){
-    console.log(event.target.value)
+  onPhoneChange(event){
+
+    this.props.onPhoneChange(event.target.value);
+
   }
 
   render() {
@@ -15,7 +18,7 @@ class PhoneInput extends Component {
         type="text"
         value={this.props.userInput.phone}
         placeholder="Phone Number"
-        onChange={this.onChange}
+        onChange={this.onPhoneChange.bind(this)}
         />
     )
   }
@@ -27,4 +30,11 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(PhoneInput);
+function matchDispatchToProps(dispatch){
+    return bindActionCreators(
+      {onPhoneChange: onPhoneChange},
+      dispatch
+    );
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(PhoneInput);
