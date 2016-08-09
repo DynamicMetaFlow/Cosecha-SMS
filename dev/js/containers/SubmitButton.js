@@ -5,7 +5,6 @@ import { sendMessage } from '../actions/index'
 
 class SubmitButton extends Component {
   clickSubmit() {
-    console.log('Submit button clicked: ' + this.props.userInput );
     this.props.sendMessage(this.props.userInput);
   }
 
