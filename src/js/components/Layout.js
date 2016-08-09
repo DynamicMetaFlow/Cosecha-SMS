@@ -13,12 +13,14 @@ import { connect } from "react-redux"
 })
 export default class Layout extends React.Component {
 
+
 //   fetchLinks() {
 //   this.props.dispatch(fetchLinks())
 // }
 
 handleMsgChange() {
-  console.log('clicked')
+  console.log('message changed')
+  this.props.dispatch(handleMsgChange())
 }
 
 handleClick() {
@@ -37,7 +39,7 @@ handleClick() {
 
     return (<div className="container">
       <h1>Cosecha SMS</h1>
-      <input type="text" value={message} onChange={this.handleMsgChange.bind(this)} placeholder="Message" />
+      <input type="text" value={message} onChange={this.handleMsgChange.bind(this)} placeholder="Message" value={message} />
       <button onClick={this.handleClick.bind(this)} >Send</button>
 
 
