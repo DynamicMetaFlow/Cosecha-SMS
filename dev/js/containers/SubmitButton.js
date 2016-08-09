@@ -10,8 +10,8 @@ class SubmitButton extends Component {
 
   render() {
     return (
-      <div>
-        <button className="btn btn-primary" onClick={this.clickSubmit.bind(this)} >Send SMS</button>
+      <div className="btn">
+        <button onClick={this.clickSubmit.bind(this)} >Send SMS</button>
       </div>
     );
   }

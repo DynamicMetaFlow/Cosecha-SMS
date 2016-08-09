@@ -13,13 +13,15 @@ class PhoneInput extends Component {
 
   render() {
     return (
-      <input
-        className="form-control"
-        type="text"
-        value={this.props.userInput.phone}
-        placeholder="Phone Number"
-        onChange={this.onPhoneChange.bind(this)}
-        />
+      <div className="centered">
+        <input
+          className="form-control"
+          type="text"
+          value={this.props.userInput.phone}
+          placeholder="Phone Number"
+          onChange={this.onPhoneChange.bind(this)}
+          />
+      </div>
     )
   }
 }

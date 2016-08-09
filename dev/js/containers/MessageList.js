@@ -33,7 +33,7 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="message-list">
         {this.renderList()}
       </div>
     );

@@ -1,7 +1,59 @@
 body{
-  background: #ddd;
+  background: #333;
+  font-family: 'Titillium Web', sans-serif;
+  color: #9a9a9a;
 }
 
 h1{
-  color: #6c6c6c;
+  color: #737070;
+  text-align: center;
+  font-size: 2.7em;
+  font-weight: 800;
+}
+
+.container{
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 20px 30px;
+}
+
+button{
+  border: 0px;
+  background: #ceb365;
+  color: #fff;
+  padding: 13px;
+  font-size: 1.1em;
+
+  width: 100%;
+  max-width: 300px;
+  margin: 0px auto;
+}
+
+.btn{
+  width: 100%;
+  text-align: center;
+  & > button{
+    margin: 0px auto;
+  }
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
+}
+
+input{
+  background: #6b6b6b;
+  border: 4px solid #222;
+  font-size: 18px;
+  padding: 10px;
+  color: #fff;
+  &:active{
+
+  }
+}
+
+.message-list{
+  margin: 10px auto;
+  max-width: 600px;
 }
