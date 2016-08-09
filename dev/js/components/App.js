@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageList from '../containers/MessageList.js';
 import PhoneInput from '../containers/PhoneInput.js';
+import SubmitButton from '../containers/SubmitButton.js';
 require('../../scss/style.scss');
 
 const App = () => (
@@ -11,7 +12,8 @@ const App = () => (
     <br />
     <MessageList />
     <br />
-    <input className="btn btn-primary" type="submit" value="Send SMS" />
+    <SubmitButton />
+    
   </div>
 );
 
