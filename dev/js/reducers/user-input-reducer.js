@@ -5,6 +5,14 @@ export default function (state={phone: '', selectedMessage: 1}, action) {
       break;
     case 'MESSAGE_SELECTED':
       return Object.assign({}, state, {selectedMessage: action.payload});
+    case 'SEND_MESSAGE':
+      console.log("Sending message...");
+      // Logic to send SMS message would go here
+      // Would most likely use Twilio
+
+      
+
+      return state;
     default:
       return state;
 
