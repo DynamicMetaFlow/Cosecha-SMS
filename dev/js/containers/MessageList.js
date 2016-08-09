@@ -5,19 +5,16 @@ import {connect} from 'react-redux';
 
 class MessageList extends Component {
   renderList() {
-    this.props.list.map((option) => {
-      return (
-        <p><input key={option.id} type="radio" name="message" /> {option.message}</p>
-      )
-    });
+    return (
+      this.props.list.map((option) => (
+        <p key={option.id}><input type="radio" name="message" /> {option.message}</p>
+      ))
+    );
   }
 
   render() {
     return (
       <div>
-        <p><input type="radio" name="message" value="1" /> Option 1</p>
-        <p><input type="radio" name="message" value="2" /> Option 2</p>
-        <p><input type="radio" name="message" value="3" /> Option 3</p>
         {this.renderList()}
       </div>
     );
