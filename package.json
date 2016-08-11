@@ -2,7 +2,7 @@
   "name": "Cosecha-SMS",
   "version": "0.0.1",
   "description": "A simple web app for learning React.js, Redux, and Twilio",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "dependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",

@@ -1,3 +1,4 @@
+var debug = process.env.NODE_ENV !== "production";
 var path = require('path');
 var webpack = require('webpack');
 var config = require('./config');
@@ -8,7 +9,7 @@ module.exports = {
         contentBase: './src',
         port: 3000
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-source-map',
     entry: './dev/js/index.js',
     module: {
         loaders: [
@@ -24,10 +25,12 @@ module.exports = {
         ]
     },
     output: {
-        path: 'src',
+        path: path.join(__dirname, 'src'),
         filename: 'js/bundle.min.js'
     },
-    plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin()
+    plugins: debug ? [] : [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
     ]
 };
