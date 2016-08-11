@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 import ListReducer from './reducer-list';
 import UserInputReducer from './user-input-reducer';
+import AlertsReducer from './alerts-reducer';
 
 
 /*
@@ -10,7 +11,8 @@ import UserInputReducer from './user-input-reducer';
 
 const allReducers = combineReducers({
     list: ListReducer,
-    userInput: UserInputReducer
+    userInput: UserInputReducer,
+    alerts: AlertsReducer
 });
 
 export default allReducers

@@ -2,6 +2,7 @@ import React from 'react';
 import MessageList from '../containers/MessageList.js';
 import PhoneInput from '../containers/PhoneInput.js';
 import SubmitButton from '../containers/SubmitButton.js';
+import AlertBox from '../containers/AlertBox.js';
 require('../../scss/style.scss');
 
 const App = () => (
@@ -13,6 +14,8 @@ const App = () => (
     <MessageList />
     <br />
     <SubmitButton />
+
+    <AlertBox />
 
   </div>
 );
