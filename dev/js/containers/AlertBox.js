@@ -4,15 +4,16 @@ import { connect } from 'react-redux';
 import { onShowMessage, showAlert, closeAlert } from '../actions/index';
 
 class AlertBox extends Component {
-
-
-
-  visibilityClass(){
+ 
+  visibilityClass( x='' ){
     if (this.props.alerts.displayed) {
-      return 'showAlert alert-box';
+      return 'alert-box-open';
+    }
+    else if ( x === 'init' ) {
+      return 'alert-box-init';
     }
     else {
-      return 'alert-box hidden hideAlert';
+      return 'alert-box-closed';
     }
   }
 
@@ -22,7 +23,7 @@ class AlertBox extends Component {
 
   render() {
     return (
-      <div className={this.visibilityClass()}>
+      <div className={this.visibilityClass('init')}>
         <p>
           <a
             className="close-box"
