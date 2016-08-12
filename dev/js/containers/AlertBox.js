@@ -23,12 +23,15 @@ class AlertBox extends Component {
   render() {
     return (
       <div className={this.visibilityClass()}>
-        <a
-          className="close-box"
-          onClick={this.closeAlert}
-        >
-          X
-        </a>
+        <p>
+          <a
+            className="close-box"
+            onClick={this.closeAlert.bind(this)}
+            href="#"
+          >
+            X
+          </a>
+        </p>
 
         {this.props.alerts.alertMessage}
         <br />
