@@ -4,7 +4,7 @@ var config = require('./config');
 // Create Express web app
 var app = require('./webapp');
 
-// Create an HTTP server and listen on the configured port
+// Create an HTTP server and listen on the configured port (3000)
 var server = http.createServer(app);
 server.listen(config.port, function() {
   console.log('Express server listening on *:' + config.port);

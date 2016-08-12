@@ -9,10 +9,10 @@ class AlertBox extends Component {
 
   visibilityClass(){
     if (this.props.alerts.displayed) {
-      return 'showAlert';
+      return 'showAlert alert-box';
     }
     else {
-      return 'hideAlert';
+      return 'alert-box hidden hideAlert';
     }
   }
 
