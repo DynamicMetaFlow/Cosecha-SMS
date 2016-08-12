@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import { sendMessage } from '../actions/index'
+import { sendMessage, showAlert } from '../actions/index'
 
 class SubmitButton extends Component {
   clickSubmit() {
+    this.props.showAlert('This is a cool new message.');
     this.props.sendMessage(this.props.userInput);
   }
 
@@ -28,7 +29,10 @@ function mapStateToProps(state) {
 // Get actions and pass them as props to to UserList
 //      > now UserList has this.props.selectUser
 function matchDispatchToProps(dispatch){
-    return bindActionCreators({sendMessage: sendMessage}, dispatch);
+    return bindActionCreators({
+      sendMessage: sendMessage,
+      showAlert: showAlert
+    }, dispatch);
 }
 
 // We don't want to return the plain UserList (component) anymore, we want to return the smart Container

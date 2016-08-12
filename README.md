@@ -17,6 +17,7 @@ A couple of things you need to have installed on your machine:
 - Webpack
 
 Go to your working directory on the terminal. Then clone the repo:
+
 ```
 git clone https://github.com/celsom3/Cosecha-SMS.git
 ```
@@ -34,6 +35,7 @@ npm install
 ```
 
 Initialize Webpack:
+
 ```
 npm run dev
 ```

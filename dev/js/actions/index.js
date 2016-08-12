@@ -37,3 +37,16 @@ export const onShowMessage = (message) => {
     payload: message
   };
 };
+
+export const showAlert = (message) => {
+  return {
+    type: 'SHOW_ALERT',
+    payload: message
+  };
+};
+
+export const closeAlert = () => {
+  return {
+    type: 'CLOSE_ALERT'
+  };
+};

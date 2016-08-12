@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { onShowMessage } from '../actions/index';
+import { onShowMessage, showAlert, closeAlert } from '../actions/index';
 
 class AlertBox extends Component {
 
-  onPhoneChange(event){
-    this.props.onPhoneChange(event.target.value);
-  }
+
 
   visibilityClass(){
     if (this.props.alerts.displayed) {
@@ -18,10 +16,24 @@ class AlertBox extends Component {
     }
   }
 
+  closeAlert(){
+    this.props.closeAlert();
+  }
+
   render() {
     return (
       <div className={this.visibilityClass()}>
+        <a
+          className="close-box"
+          onClick={this.closeAlert}
+        >
+          X
+        </a>
+
         {this.props.alerts.alertMessage}
+        <br />
+        {this.props.userInput.phone}
+
       </div>
     )
   }
@@ -29,13 +41,18 @@ class AlertBox extends Component {
 
 function mapStateToProps(state) {
   return {
-    alerts: state.alerts
+    alerts: state.alerts,
+    userInput: state.userInput
   }
 }
 
 function matchDispatchToProps(dispatch){
     return bindActionCreators(
-      {onShowMessage: onShowMessage},
+      {
+        onShowMessage: onShowMessage,
+        showAlert: showAlert,
+        closeAlert: closeAlert
+      },
       dispatch
     );
 }
