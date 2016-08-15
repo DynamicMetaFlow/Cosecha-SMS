@@ -36,7 +36,7 @@ app.use(session({
 app.use(flash());
 
 // Configure application routes
-// var routes = require('./controllers/router');
+// var routes = require('./router');
 // var router = express.Router();
 
 // Add CSRF protection for web routes

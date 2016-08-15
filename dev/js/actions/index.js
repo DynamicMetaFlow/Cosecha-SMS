@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const onPhoneChange = (phone) => {
     return {
         type: 'PHONE_INPUT_CHANGED',
@@ -14,10 +16,12 @@ export const onMessageSelect = (message) => {
 
 
 export const sendMessage = (userInput) => {
+  let resultString = '';
+  axios.get('http://jsonplaceholder.typicode.com/posts/1/comments').then((data => console.log(data))).catch(console.log('error'));
   return {
     type: 'SEND_MESSAGE',
-    payload: userInput
-  };
+    payload: resultString
+  }
 };
 
 export const VALIDATE_PHONE = 'VALIDATE_PHONE';
