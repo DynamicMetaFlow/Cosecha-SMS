@@ -16,12 +16,34 @@ export const onMessageSelect = (message) => {
 
 
 export const sendMessage = (userInput) => {
-  let resultString = '';
-  axios.get('http://jsonplaceholder.typicode.com/posts/1/comments').then((data => console.log(data))).catch(console.log('error'));
-  return {
-    type: 'SEND_MESSAGE',
-    payload: resultString
+  return function (dispatch) {
+    axios.get('http://jsonplaceholder.typicode.com/posts/1/comments')
+      .then( (response) => dispatch({
+        type: 'SEND_MESSAGE',
+        response: response.data,
+        payload: userInput
+      }))
+      .then( (response, err) =>  {
+        if(err) {
+          dispatch({
+            type: 'SHOW_ALERT',
+            payload: response.data[0].body
+          });
+        }
+        else {
+          dispatch({
+            type: 'SEND_MESSAGE',
+            response: response.data,
+            payload: userInput
+          });
+        }
+      }   )
+      .catch( (err) => dispatch({
+        type: 'SHOW_ALERT',
+        payload: 'There was an error'
+      }));
   }
+
 };
 
 export const VALIDATE_PHONE = 'VALIDATE_PHONE';

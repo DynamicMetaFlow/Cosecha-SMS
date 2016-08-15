@@ -5,7 +5,7 @@ import { sendMessage, showAlert } from '../actions/index'
 
 class SubmitButton extends Component {
   clickSubmit() {
-    this.props.showAlert('This is a cool new message.');
+    //this.props.showAlert('This is a cool new message.');
     this.props.sendMessage(this.props.userInput);
   }
 

@@ -10,8 +10,7 @@ export default function (state={phone: '', selectedMessage: 1}, action) {
       // Would most likely use Twilio
       console.log('Sending Message: ' + action.payload.selectedMessage);
       console.log('Sending to: ' + action.payload.phone);
-
-
+      console.log(action.response);
 
       return state;
     default:
