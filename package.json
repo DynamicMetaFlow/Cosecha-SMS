@@ -4,6 +4,7 @@
   "description": "A simple web app for learning React.js, Redux, and Twilio",
   "main": "webpack.config.js",
   "dependencies": {
+    "axios": "^0.13.1",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
