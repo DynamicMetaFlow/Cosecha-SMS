@@ -35,8 +35,6 @@ class AlertBox extends Component {
         </p>
 
         {this.props.alerts.alertMessage}
-        <br />
-        {this.props.userInput.phone}
 
       </div>
     )
