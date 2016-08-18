@@ -9,6 +9,12 @@ var csurf = require('csurf');
 var config = require('./config');
 var twilioNotifications = require('./middleware/twilioNotifications');
 
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.config.js');
+
+// Set up webpack Compiles
+var compiler = webpack(webpackConfig);
+
 // Create Express web app
 var app = express();
 
@@ -24,6 +30,18 @@ app.use(express.static(path.join(__dirname, 'src')));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+
+// Set up Webpack Middleware
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: webpackConfig.output.publicPath,
+  stats: {
+    colors: true
+  }
+}));
+
+app.use(require('webpack-hot-middleware')(compiler));
 
 // Create and manage HTTP sessions for all requests
 app.use(session({

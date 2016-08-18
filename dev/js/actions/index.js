@@ -21,8 +21,6 @@ export const sendMessage = (userInput) => {
     axios.get('http://jsonplaceholder.typicode.com/posts/1/comments')
       .then( (response ) =>  {
       
-          console.log( 'No Error!' );
-
           dispatch({
             type: 'SEND_MESSAGE',
             response: response.data,

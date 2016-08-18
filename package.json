@@ -37,12 +37,20 @@
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.11.0"
+    "webpack-hot-middleware": "^2.12.2"
   },
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-stage-0": "^6.5.0",
-    "react-transform-hmr": "^1.0.4"
+    "extract-text-webpack-plugin": "^1.0.1",
+    "nodemon": "^1.10.0",
+    "normalize.css": "^4.2.0",
+    "postcss-loader": "^0.10.1",
+    "react-transform-hmr": "^1.0.4",
+    "sass-lint": "^1.8.2",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack-dev-middleware": "^1.6.1"
   },
   "scripts": {
     "dev": "webpack",

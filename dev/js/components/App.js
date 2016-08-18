@@ -8,7 +8,7 @@ require('../../scss/style.scss');
 const App = () => (
   <div className="container">
     <h1>Cosecha SMS</h1>
-    <p className="centered">Type in the phone number you would like to send a Cosecha SMS to:</p>
+    <p className="centered">Just type in the phone number you would like to send a Cosecha SMS to:</p>
     <PhoneInput />
     <br />
     <MessageList />
