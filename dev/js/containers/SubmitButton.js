@@ -27,7 +27,7 @@ class SubmitButton extends Component {
     }
 
     else {
-      this.props.showAlert('That doesn\'t look like a number');
+      this.props.showAlert('That doesn\'t look like a phone number');
     }
   }
 
