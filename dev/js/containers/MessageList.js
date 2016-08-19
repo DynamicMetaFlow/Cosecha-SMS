@@ -8,15 +8,18 @@ class MessageList extends Component {
     this.props.onMessageSelect(event.target.value);
   }
 
-  isChecked(event) {
-    //this.props.userInput.selectedMessage === option.id
-    return this.props.userInput.selectedMessage === event.target.value;
-
+  isChecked( id ) {
+    if ( id === this.props.userInput.selectedMessage ) {
+      return 'checked';
+    }
   }
 
   renderList() {
+    const selfThis = this;
     return (
-      this.props.list.map((option) => (
+      this.props.list.map((option) => {
+         
+        return (
         <div key={option.id} className="radio>">
           <label>
             <input
@@ -27,8 +30,11 @@ class MessageList extends Component {
             /> {option.message}
           </label>
         </div>
-      ))
+        )
+      })
     );
+
+
   }
 
   render() {

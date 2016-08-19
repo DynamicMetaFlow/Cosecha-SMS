@@ -5,9 +5,32 @@ import { sendMessage, showAlert } from '../actions/index'
 
 class SubmitButton extends Component {
   clickSubmit() {
-    //this.props.showAlert('This is a cool new message.');
-    this.props.sendMessage(this.props.userInput);
+    
+    let phone_number = this.props.userInput.phone;
+    
+    // remove all non-digits
+
+    let targ=phone_number.replace(/[^\d]/g,'');    
+
+    // Check to make sure that a phone number is selected
+    if ( this.props.userInput.phone === '' ) {
+      this.props.showAlert('You must add a number');
+    }
+    // Check to make sure that a phone number is valid
+    
+    else if ( targ && targ.length===10 ) {
+      this.props.sendMessage( this.props.userInput );
+    }
+    // Check to make sure the user has selected a message
+    else if ( this.props.userInput.selectedMessage === 1 ) {
+      this.props.showAlert('Please select a message to send');
+    }
+
+    else {
+      this.props.showAlert('That doesn\'t look like a number');
+    }
   }
+
 
   render() {
     return (
