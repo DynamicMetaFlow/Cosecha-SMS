@@ -1,7 +1,8 @@
-import { UPDATE_MESSAGE } from '../actions/types.js';
+import { UPDATE_MESSAGE, UPDATE_NUMBER } from '../actions/types.js';
 
 const defaultState = {
-	message: ''
+	message: 1,
+	number: '602'
 };
 
 export default function(state = defaultState, action = {} ) {
@@ -14,7 +15,11 @@ export default function(state = defaultState, action = {} ) {
       });
 			break;
 
-
+		case UPDATE_NUMBER:
+			return Object.assign( {}, state, {
+				number: action.payload.number
+			});
+			break;
     default:
       return state;
   }
