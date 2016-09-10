@@ -8,9 +8,10 @@ $red: #751a1f;
   background-position: center center;
 
   .panel{
-    background: rgba(80, 26, 117, 0.8);
+    background: rgba(23, 23, 23, 0.8);
     padding: 20% 30px;
-    text-align: center;
+		word-wrap: break-word;
+		overflow-x: hidden;
 
     h1,p {
       color: #343333;
