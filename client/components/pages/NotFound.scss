@@ -1,0 +1,32 @@
+$red: #751a1f;
+
+.layout{
+  height: 100%;
+  background: $red; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .panel{
+    background: rgba(117, 26, 31, 0.8);
+    padding: 20% 30px;
+    text-align: center;
+
+    h1,p {
+      color: white;
+    }
+    h1{
+      text-align: center
+    }
+    
+    button{
+      margin: 50px auto;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    
+  }
+}
+
+

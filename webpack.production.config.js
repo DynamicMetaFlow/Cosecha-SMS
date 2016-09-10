@@ -2,30 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
-  devServer: {
-    inline: true,
-    contentBase: './www',
-    port: 8000
-  },
-  context: __dirname,
-  devtool: 'inline-source-map',
   entry: [
-    'webpack-hot-middleware/client',
-    './client/index.js'
+    path.join(__dirname, 'client/index.js')
   ],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/'
-  },
-  resolve: {
-    extensions: ['', '.scss', '.css', '.js', '.json'],
-    modulesDirectories: [
-      'node_modules',
-      path.resolve(__dirname, './node_modules')
-    ]
   },
   module: {
     loaders: [
@@ -52,11 +38,20 @@ module.exports = {
     includePaths: [path.resolve(__dirname, './client')]
   },
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new ExtractTextPlugin('react-toolbox.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings : false,
+        screw_ie8: true
+      }
+    }),
+    new StatsPlugin('webpack.stats.json', {
+      source: false,
+      modules: false
+    }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ]
 };
